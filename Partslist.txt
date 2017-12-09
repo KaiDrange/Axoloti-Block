@@ -1,0 +1,44 @@
+I used:
+2mm thick transparent acrylic PMMA for the panel with connections. Thicker than 2mm would probably make some of the IO hard to use. (I also used this as a mounting board for the potmeters)
+
+PLA filament for 3D printing the case.
+
+Five 9mm VERTICAL: B25K - 25K Linear potmeters:
+https://www.thonk.co.uk/shop/alpha-9mm-pots/
+
+Four "Fine - Small" and one "Fine - XL" of these knobs
+https://www.thonk.co.uk/shop/davies-skirted-knobs/
+
+Adafruit Powerboost 1000C
+https://learn.adafruit.com/adafruit-powerboost-1000c-load-share-usb-charge-boost/overview
+
+An SPDT Slide switch
+https://www.adafruit.com/product/805
+
+A flat 3.7v 2000mAh Lithium Ion Polymer Battery
+https://www.digitalimpuls.no/pc-komponenter/enkortsdata/arduino/diverse/lithium-ion-polymer-battery-37v-2000mah-141844-p0000158591
+
+Four small pushbuttons. I don't know where I got them, but they looked like these, only black:
+https://www.adafruit.com/product/1489
+
+M3 and M2 countersunk screws and nuts.
+
+White acrylic paint for the engraved text on the acrylic panel (before the black spray)
+
+Black acrylic spray paint for the acrylic panel (after painting the engraved sections white)
+
+Black Plasti Dip rubber spray for the 3D printed case.
+
+Five 10x10mm square neodymium magnets (three in front, one on each side)
+
+Super-glue
+
+A dremel to drill holes for M3 screws and notches for the magnets in the acrylic mounting board I attached the pots to.
+
+
+
+
+
+
+
+
