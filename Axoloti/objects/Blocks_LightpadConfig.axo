@@ -1,34 +1,38 @@
 <objdefs appVersion="1.0.12">
-   <obj.normal id="Blocks_SeaboardConfig" uuid="77f2b1a2-f8f1-4216-8800-638d9d2da0f9">
-      <sDescription>Sends CCs to configure a Roli Seaboard Block running a corresponding Littlefoot script. A CC#61 &gt; 0 received on channel 1 from USB Host resends current settings.</sDescription>
+   <obj.normal id="Blocks_LightpadConfig" uuid="74f2b1a2-f8f1-4216-8800-638d9d2da0f9">
+      <sDescription>Sends CCs to configure a Roli Lightpad Block running a corresponding Littlefoot script. A CC#60 received on channel 1 from USB Host resends current settings.</sDescription>
       <author>Kai Drange</author>
       <license>BSD</license>
       <inlets>
          <bool32.risingfalling name="MPE" description="MPE mode on"/>
-         <bool32.risingfalling name="Piano" description="Piano mode on"/>
          <int32.positive name="SingleChannelNo" description="Midi channel for non-MPE mode"/>
+         <int32.positive name="GridSize" description="Grid size 1 to 5"/>
+         <int32.positive name="Number" description="Number to display on lightpad"/>
+         <bool32.rising name="DisplayNumber"/>
       </inlets>
       <outlets/>
       <displays>
          <bool32 name="mpe"/>
-         <bool32 name="piano"/>
+         <int32.label name="grid"/>
       </displays>
       <params/>
       <attribs/>
-      <code.declaration><![CDATA[// out
-int ccChannel = 80;
-int ccPiano = 81;
-// in
-int ccSettingsRequest = 61;
+      <code.declaration><![CDATA[//out
+int ccChannel = 70;
+int ccDisplayNumber = 71;
+int ccGridSize = 72;
+//in
+int ccSettingsRequest = 60;
 
-bool prevMPEState = false;;
-bool prevPianoState = false;
+bool prevMPEState = false;
+bool prevDisplayNumber = false;
 int prevChannel = 1;
+int prevGridSize = 1;
 bool initialStateSent = false;]]></code.declaration>
       <code.krate><![CDATA[if (!initialStateSent) {
 	prevMPEState = inlet_MPE ? false : true;
-	prevPianoState = inlet_Piano ? false : true;
 	prevChannel = inlet_SingleChannelNo - 1;
+	prevGridSize = inlet_GridSize - 1;
 	initialStateSent = true;
 }
 else {
@@ -45,17 +49,18 @@ else {
 		disp_mpe = false;
 	}
 	
-	if (inlet_Piano && !prevPianoState) {
-		MidiSend3(MIDI_DEVICE_USB_HOST, 1, 11 << 4, ccPiano, 1);
-	  	disp_piano = true;
+	if (inlet_GridSize != prevGridSize) {
+		MidiSend3(MIDI_DEVICE_USB_HOST, 1, 11 << 4, ccGridSize, inlet_GridSize);
+	  	disp_grid = inlet_GridSize;
 	}
-	else if (!inlet_Piano && prevPianoState) {
-		MidiSend3(MIDI_DEVICE_USB_HOST, 1, 11 << 4, ccPiano, 0);
-		disp_piano = false;
+
+	if (inlet_DisplayNumber != prevDisplayNumber) {
+		MidiSend3(MIDI_DEVICE_USB_HOST, 1, 11 << 4, ccDisplayNumber, inlet_Number);
 	}
 	
 	prevMPEState = inlet_MPE ? true : false;
-	prevPianoState = inlet_Piano ? true : false;
+	prevDisplayNumber = inlet_DisplayNumber ? true : false;
+	prevGridSize = inlet_GridSize;
 	prevChannel = inlet_SingleChannelNo;
 }]]></code.krate>
       <code.midihandler><![CDATA[if (dev == MIDI_DEVICE_USB_HOST && port == 1) {
