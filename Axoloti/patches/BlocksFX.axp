@@ -1,0 +1,561 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="14" y="14">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jt/filter/vcf4pole2x" uuid="f0ea35e9-a9c5-445e-8868-79b556d5d5c3" name="vcf4pole2x_1" x="126" y="14">
+      <params>
+         <frac32.s.map name="pitch" value="64.0"/>
+         <frac32.u.map name="reso" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/rngs/chorus" uuid="fefe9ec6-1b22-431f-ad8f-09529a3fb5e6" name="chorus_1" x="266" y="14">
+      <params>
+         <frac32.u.map name="amount" value="0.0">
+            <modulators>
+               <modulation sourceName="mod_a" modName="" value="64.0"/>
+            </modulators>
+         </frac32.u.map>
+         <frac32.u.map name="depth" value="16.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="TSG/fx/tapedelay" uuid="a1935e9d-aa30-442e-97b6-097f54b3c286" name="obj_1" x="364" y="14">
+      <params>
+         <frac32.u.map name="Tape age" value="24.5"/>
+         <frac32.u.map name="Low End" value="64.0"/>
+         <frac32.u.map name="Saturation" value="12.0"/>
+         <frac32.u.map name="Time" value="0.0">
+            <modulators>
+               <modulation sourceName="mod_b" modName="" value="64.0"/>
+            </modulators>
+         </frac32.u.map>
+         <frac32.s.map name="time symmetry" value="0.0"/>
+         <bool32.tgl name="sync to external clock" value="0"/>
+         <frac32.u.map name="PingPong" value="64.0"/>
+         <frac32.u.map name="Feedback" value="32.5"/>
+         <frac32.u.map name="Flutter" value="0.0"/>
+         <frac32.u.map name="mix" value="0.0">
+            <modulators>
+               <modulation sourceName="mod_c" modName="" value="16.0"/>
+            </modulators>
+         </frac32.u.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/rngs/reverb" uuid="bb0fb9e0-aafe-4501-ba83-897f2530751d" name="reverb_1" x="504" y="14">
+      <params>
+         <frac32.u.map name="amount" value="0.0">
+            <modulators>
+               <modulation sourceName="mod_d" modName="" value="26.0"/>
+            </modulators>
+         </frac32.u.map>
+         <frac32.u.map name="time" value="19.0">
+            <modulators>
+               <modulation sourceName="mod_d" modName="" value="28.0"/>
+            </modulators>
+         </frac32.u.map>
+         <frac32.u.map name="diffusion" value="45.0"/>
+         <frac32.u.map name="gain" value="32.0"/>
+         <frac32.u.map name="lowpass" value="45.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/audio/out_stereo_vol" uuid="awca1a567f535acc21055669829101d3ee7f0189" name="out_stereo_vol_1" x="616" y="14">
+      <params>
+         <frac32.u.map name="volume" value="0.0">
+            <modulators>
+               <modulation sourceName="mod_vol" modName="" value="64.0"/>
+            </modulators>
+         </frac32.u.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_1" x="812" y="14">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="mod_a" x="952" y="14">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_2" x="812" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="mod_b" x="952" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_3" x="812" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="mod_c" x="952" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_4" x="812" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="mod_d" x="952" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="4909c4fc-0df5-483a-9e78-407354ca7167" name="Seaboard midi thru" x="140" y="182">
+      <params/>
+      <attribs>
+         <combo attributeName="poly" selection="8"/>
+      </attribs>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb" uuid="53b04874696932f38aceaa168bd5d9efb743716d" name="seaboard midi in" x="70" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <patchobj type="patch/object" uuid="68942554-0c30-4524-a700-c166e1b5612c" name="note_1" x="210" y="28">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+            </attribs>
+            <object id="patch/object" uuid="68942554-0c30-4524-a700-c166e1b5612c">
+               <sDescription>Midi note output</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_out.axh</helpPatch>
+               <inlets>
+                  <frac32.bipolar name="note" description="note (-64..63)"/>
+                  <frac32.positive name="velo" description="velocity"/>
+                  <bool32.rising name="trig" description="trigger"/>
+                  <int32.positive name="channel" description="midi in channel"/>
+               </inlets>
+               <outlets/>
+               <displays/>
+               <params/>
+               <attribs>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>MIDI_DEVICE_DIN, 1</string>
+                        <string>MIDI_DEVICE_USB_HOST, 1</string>
+                        <string>MIDI_DEVICE_USB_HOST, 2</string>
+                        <string>MIDI_DEVICE_USB_HOST, 3</string>
+                        <string>MIDI_DEVICE_USB_HOST, 4</string>
+                        <string>MIDI_DEVICE_INTERNAL, 1</string>
+                        <string>MIDI_DEVICE_INTERNAL, 2</string>
+                        <string>MIDI_DEVICE_USB_DEVICE, 1</string>
+                     </CEntries>
+                  </combo>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int ntrig;
+int lastnote;]]></code.declaration>
+               <code.init><![CDATA[ntrig=0;]]></code.init>
+               <code.krate><![CDATA[if ((inlet_trig>0) && !ntrig) {
+lastnote = (64+(inlet_note>>21))&0x7F;
+MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (inlet_channel-1),lastnote,inlet_velo>>20);  ntrig=1;
+}
+if (!(inlet_trig>0) && ntrig) {MidiSend3((midi_device_t) attr_device, MIDI_NOTE_OFF + (inlet_channel-1),lastnote,__USAT(inlet_velo>>20,7)); ntrig=0;}]]></code.krate>
+            </object>
+         </patchobj>
+         <obj type="patch/inlet i" uuid="f11927f00c59219df0c50f73056aa19f125540b7" name="midi channel" x="14" y="140">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="seaboard midi in" outlet="note"/>
+               <dest obj="note_1" inlet="note"/>
+            </net>
+            <net>
+               <source obj="seaboard midi in" outlet="velocity"/>
+               <dest obj="note_1" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="seaboard midi in" outlet="gate"/>
+               <dest obj="note_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="midi channel" outlet="inlet"/>
+               <dest obj="note_1" inlet="channel"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>polyphonic</subpatchmode>
+            <MidiChannel>1</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="mod_vol" x="952" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="./../patches/BlocksControls" uuid="310e0055-66f8-4d9f-a2ad-0c100575fd0d" name="BlocksControls_1" x="630" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="mpe mode" x="868" y="266">
+      <params>
+         <bool32.tgl name="b" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="Blocks_SeaboardConfig" uuid="77f2b1a2-f8f1-4216-8800-638d9d2da0f9" name="Blocks_SeaboardConfig_1" x="966" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="Pad X CC" x="126" y="308">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="43"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc any" uuid="d49b3be79ccfae03f0630feecafe683b0e9507d4" name="cc_1" x="224" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="din"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="piano mode" x="868" y="322">
+      <params>
+         <bool32.tgl name="b" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/countersat2" uuid="ac2f83169ae51aaf19acf322affbe56ca1bbf48f" name="countersat2_1" x="602" y="336">
+      <params>
+         <int32 name="maximum" value="16"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_1" x="714" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="seaboard midi in channel" x="812" y="378">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <patcher type="patch/patcher" uuid="a4bd7922-a99d-47e2-ad5a-c217d29231e7" name="lightpad XYZ-pad" x="14" y="392">
+      <params/>
+      <attribs>
+         <combo attributeName="poly" selection="1"/>
+      </attribs>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/ctrl/mpe" uuid="94323477e6476a10b9332922e5dfcd2705641af1" name="mpe_1" x="28" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="182" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trig" x="504" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/gain" uuid="6b4dd3da49f98e54900f6c20031f38f4624fa364" name="gain_1" x="252" y="70">
+            <params>
+               <frac32.u.map name="amp" value="18.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_1" x="364" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet f" uuid="d18a9a550bcaaebac94e25983bd0e27dbfd7233c" name="x" x="504" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet f" uuid="d18a9a550bcaaebac94e25983bd0e27dbfd7233c" name="y" x="504" y="140">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="28" y="182">
+            <params>
+               <frac32.s.map name="pitch" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet f" uuid="d18a9a550bcaaebac94e25983bd0e27dbfd7233c" name="z" x="504" y="182">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="mpe_1" outlet="pressure"/>
+               <dest obj="z" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="mpe_1" outlet="timbre"/>
+               <dest obj="y" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="mpe_1" outlet="gate"/>
+               <dest obj="and_1" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="square_1" outlet="wave"/>
+               <dest obj="and_1" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="and_1" outlet="o"/>
+               <dest obj="trig" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="bipolar2unipolar_1" outlet="o"/>
+               <dest obj="x" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="gain_1" outlet="out"/>
+               <dest obj="bipolar2unipolar_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="mpe_1" outlet="bend"/>
+               <dest obj="gain_1" inlet="in"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>polyexpression</subpatchmode>
+            <MidiChannel>1</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>105</x>
+            <y>47</y>
+            <width>756</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="Pad Y CC" x="126" y="406">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="44"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc any" uuid="d49b3be79ccfae03f0630feecafe683b0e9507d4" name="cc_2" x="224" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="din"/>
+      </attribs>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="602" y="420">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="Blocks_LightpadConfig" uuid="74f2b1a2-f8f1-4216-8800-638d9d2da0f9" name="Blocks_LightpadConfig_1" x="966" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="mpe mode_" x="868" y="448">
+      <params>
+         <bool32.tgl name="b" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="Pad Z CC" x="126" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="28"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc any" uuid="d49b3be79ccfae03f0630feecafe683b0e9507d4" name="cc_3" x="224" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="din"/>
+      </attribs>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="grid size" x="854" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="chorus_1" outlet="l"/>
+         <dest obj="obj_1" inlet="In L"/>
+      </net>
+      <net>
+         <source obj="chorus_1" outlet="r"/>
+         <dest obj="obj_1" inlet="In R"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="Out L"/>
+         <dest obj="reverb_1" inlet="l"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="Out R"/>
+         <dest obj="reverb_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="reverb_1" outlet="l"/>
+         <dest obj="out_stereo_vol_1" inlet="left"/>
+      </net>
+      <net>
+         <source obj="reverb_1" outlet="r"/>
+         <dest obj="out_stereo_vol_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="BlocksControls_1" outlet="Vol"/>
+         <dest obj="mod_vol" inlet="v"/>
+      </net>
+      <net>
+         <source obj="piano mode" outlet="o"/>
+         <dest obj="Blocks_SeaboardConfig_1" inlet="Piano"/>
+      </net>
+      <net>
+         <source obj="countersat2_1" outlet="o"/>
+         <dest obj="+1_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+1_1" outlet="result"/>
+         <dest obj="cc_1" inlet="chan"/>
+         <dest obj="cc_2" inlet="chan"/>
+         <dest obj="cc_3" inlet="chan"/>
+         <dest obj="Seaboard midi thru" inlet="midi channel"/>
+         <dest obj="Blocks_LightpadConfig_1" inlet="Number"/>
+      </net>
+      <net>
+         <source obj="BlocksControls_1" outlet="PB3"/>
+         <dest obj="countersat2_1" inlet="dec"/>
+         <dest obj="or_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="BlocksControls_1" outlet="PB4"/>
+         <dest obj="countersat2_1" inlet="inc"/>
+         <dest obj="or_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="bipolar2unipolar_1" outlet="o"/>
+         <dest obj="mod_a" inlet="v"/>
+      </net>
+      <net>
+         <source obj="bipolar2unipolar_2" outlet="o"/>
+         <dest obj="mod_b" inlet="v"/>
+      </net>
+      <net>
+         <source obj="bipolar2unipolar_3" outlet="o"/>
+         <dest obj="mod_c" inlet="v"/>
+      </net>
+      <net>
+         <source obj="bipolar2unipolar_4" outlet="o"/>
+         <dest obj="mod_d" inlet="v"/>
+      </net>
+      <net>
+         <source obj="BlocksControls_1" outlet="A"/>
+         <dest obj="bipolar2unipolar_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="BlocksControls_1" outlet="B"/>
+         <dest obj="bipolar2unipolar_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="BlocksControls_1" outlet="C"/>
+         <dest obj="bipolar2unipolar_3" inlet="i"/>
+      </net>
+      <net>
+         <source obj="BlocksControls_1" outlet="D"/>
+         <dest obj="bipolar2unipolar_4" inlet="i"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="chorus_1" inlet="l"/>
+         <dest obj="chorus_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="mpe mode" outlet="o"/>
+         <dest obj="Blocks_SeaboardConfig_1" inlet="MPE"/>
+      </net>
+      <net>
+         <source obj="grid size" outlet="out"/>
+         <dest obj="Blocks_LightpadConfig_1" inlet="GridSize"/>
+      </net>
+      <net>
+         <source obj="or_1" outlet="o"/>
+         <dest obj="Blocks_LightpadConfig_1" inlet="DisplayNumber"/>
+      </net>
+      <net>
+         <source obj="seaboard midi in channel" outlet="out"/>
+         <dest obj="Blocks_SeaboardConfig_1" inlet="SingleChannelNo"/>
+      </net>
+      <net>
+         <source obj="mpe mode_" outlet="o"/>
+         <dest obj="Blocks_LightpadConfig_1" inlet="MPE"/>
+      </net>
+      <net>
+         <source obj="Pad X CC" outlet="out"/>
+         <dest obj="cc_1" inlet="cc"/>
+      </net>
+      <net>
+         <source obj="lightpad XYZ-pad" outlet="trig"/>
+         <dest obj="cc_1" inlet="trig"/>
+         <dest obj="cc_2" inlet="trig"/>
+         <dest obj="cc_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="lightpad XYZ-pad" outlet="x"/>
+         <dest obj="cc_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="Pad Y CC" outlet="out"/>
+         <dest obj="cc_2" inlet="cc"/>
+      </net>
+      <net>
+         <source obj="Pad Z CC" outlet="out"/>
+         <dest obj="cc_3" inlet="cc"/>
+      </net>
+      <net>
+         <source obj="lightpad XYZ-pad" outlet="z"/>
+         <dest obj="cc_3" inlet="v"/>
+      </net>
+      <net>
+         <source obj="lightpad XYZ-pad" outlet="y"/>
+         <dest obj="cc_2" inlet="v"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+      <MidiChannel>1</MidiChannel>
+      <NPresets>8</NPresets>
+      <NPresetEntries>32</NPresetEntries>
+      <NModulationSources>8</NModulationSources>
+      <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>134</x>
+      <y>23</y>
+      <width>1194</width>
+      <height>726</height>
+   </windowPos>
+</patch-1.0>
