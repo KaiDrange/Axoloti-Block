@@ -3,7 +3,10 @@
 <project name="My Project">
   <file file="/Users/kaidrange/Documents/ROLI/LittleFoot/AxoBlock/AxoBlock_Seaboard.littlefoot"
         uuid="0b1fce33a1b2446ba3c20d1062c4dd42"/>
+  <file file="/Users/kaidrange/Documents/ROLI/LittleFoot/AxoBlock/AxoBlock_Lightpad.littlefoot"
+        uuid="a127b89bcac645fd842eac04daed731d"/>
   <openFiles>
     <openFile uuid="0b1fce33a1b2446ba3c20d1062c4dd42"/>
+    <openFile uuid="a127b89bcac645fd842eac04daed731d"/>
   </openFiles>
 </project>

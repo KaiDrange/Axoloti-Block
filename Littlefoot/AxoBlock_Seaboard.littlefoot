@@ -29,6 +29,7 @@ int  presetIndex;
 int  topOctaveShift;
 int  clusterWidthLast;
 int  xPos;
+bool settingsRequested;
 
 void initialise()
 {
@@ -59,7 +60,7 @@ void initialise()
     topOctaveShift = 255;
     clusterWidthLast = 1;
     updateTopologyShift();
-    log(2);
+    settingsRequested = false;
 }
 
 void sendConfigItemToCluster (int itemId)
@@ -118,6 +119,11 @@ void repaint()
     {
         fillPixel (0, 0, 0);
         fillPixel (0, 1, 0);
+    }
+    
+    if (!settingsRequested && isConnectedToHost()) {
+        sendCC(0, 61, 100);
+        settingsRequested = true;
     }
 }
 
